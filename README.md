@@ -19,9 +19,6 @@ Ansible ➜ Configuration Management
 Nginx ➜ Web Server
 EpicBook ➜ Web Application
 
-yaml
-Copy code
-
 Each layer is automated to ensure consistency, scalability, and repeatability across environments.
 
 ---
