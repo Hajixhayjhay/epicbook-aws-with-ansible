@@ -1,0 +1,30 @@
+---
+- name: Update and upgrade packages
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install common packages
+  apt:
+    name:
+      - nginx
+      - git
+      - mysql-client
+      - curl
+      - build-essential
+    state: present
+
+- name: Install Node.js 18
+  shell: |
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+    apt-get install -y nodejs
+  args:
+    executable: /bin/bash
+
+- name: Check Node.js version
+  command: node -v
+  register: node_version
+  changed_when: false
+
+- debug:
+    msg: "Node.js version installed: {{ node_version.stdout }}"

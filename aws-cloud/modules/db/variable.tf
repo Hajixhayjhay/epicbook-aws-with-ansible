@@ -26,3 +26,6 @@ variable "db_subnet_ids" {
 variable "priv_sg_id" {
   type = string  
 }
+variable "dbhost" {
+  type = string  
+}

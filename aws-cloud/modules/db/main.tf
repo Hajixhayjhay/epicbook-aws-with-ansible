@@ -33,7 +33,7 @@ resource "aws_db_instance" "mysql_rds" {
 
 # Store the password in Secrets Manager
 resource "aws_secretsmanager_secret" "rds_secret" {
-  name = "my-rds-password-${terraform.workspace}"
+  name = "${terraform.workspace}"
   tags = var.tags
 }
 
@@ -44,6 +44,7 @@ resource "aws_secretsmanager_secret_version" "rds_secret_value" {
     username = var.dbuser
     password = var.dbpass
     dbname   = var.dbname
+    dbhost   = var.dbhost
   })
 }
 

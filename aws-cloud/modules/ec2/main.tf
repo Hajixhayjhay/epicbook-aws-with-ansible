@@ -10,11 +10,11 @@ resource "aws_instance" "my_ec2" {
   subnet_id              = var.epicbook_pubsub_id
   vpc_security_group_ids = var.pub_sg_id
   associate_public_ip_address = true
-  user_data = templatefile("${path.module}/userdata.yaml", {
+ /* user_data = templatefile("${path.module}/userdata.yaml", {
   db_host     = var.dbhost
   db_username = var.dbuser
   db_password = var.dbpass
-})
+})*/
 
   tags                   = var.tags
 }

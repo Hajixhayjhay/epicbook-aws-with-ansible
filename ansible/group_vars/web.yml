@@ -1,0 +1,12 @@
+app_name: epicbook
+app_env: production
+app_dir: /opt/epicbook       # match where EpicBook is actually deployed
+nginx_port: 80
+
+db_host: mysql-default.cly0s66mui79.us-east-1.rds.amazonaws.com
+db_port: 3306
+db_name: bookstore
+db_username: admin1
+db_password: password1
+
+epicbook_repo: https://github.com/pravinmishraaws/theepicbook.git

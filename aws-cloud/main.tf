@@ -46,6 +46,7 @@ module "db" {
   dbuser = var.dbuser
   dbpass = var.dbpass
   tags   = local.tags
+  dbhost = module.db.dbhost
 }
 
 
